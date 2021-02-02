@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+h1 {
+    text-align: center;
+    margin: 0 auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gameOptions {
+    display: flex;
+    justify-content: space-around;
+    background: blue;
+    padding: 1em;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gameOptions label {
+    font-size: 2em;
+    font-weight: 700;
+    color: white;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.gameOptions select {
+    font-size: 2em;
+    width: 100%;
 }
-
-.App-link {
-  color: #61dafb;
+.gameOption button {
+    width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.playerHand, .dealerHand {
+    width: 50%;
+    height: 10vw;
+    margin: 0 auto;
+    border: .5vw solid white;
+    display: flex;
+    justify-content: center;
+}
+.dealerHand {
+    margin-bottom: 5vw;
+}
+.playerHand div img, .dealerHand div img {
+    animation: newCard 1s 1 ;
+    width: 7vw;
+}
+@keyframes newCard {
+    0%{opacity: 0;}
+    25%{opacity: 0.25;}
+    50%{opacity: 0.5;}
+    75%{opacity: 0.75;}
+    100%{opacity: 1;}
+}
+.dealerHand div:first-child {
+    position: relative;
+}
+.dealerHand div:first-child::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('./cardBack.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 5;
+}
+.dealerHand div:nth-child(1), .playerHand div:nth-child(1) {
+    transform: translateX(30%);
+}
+.dealerHand div:nth-child(2), .playerHand div:nth-child(2){
+    transform: translateX(-30%);
+}
+.dealerHand div:nth-child(3), .playerHand div:nth-child(3){
+    transform: translateX(-90%);
+}
+.dealerHand div:nth-child(4), .playerHand div:nth-child(4){
+    transform: translateX(-150%);
+}
+.dealerHand div:nth-child(5), .playerHand div:nth-child(5){
+    transform: translateX(-210%);
+}
+.dealerHand div:nth-child(6), .playerHand div:nth-child(6){
+    transform: translateX(-270%);
+}
+.dealerHand div:nth-child(7), .playerHand div:nth-child(7){
+    transform: translateX(-330%);
+}
+.dealerHand div:nth-child(8), .playerHand div:nth-child(8){
+    transform: translateX(-390%);
+}
+.dealerHand div:nth-child(9), .playerHand div:nth-child(9){
+    transform: translateX(-450%);
+}
+.dealerHand div:nth-child(10), .playerHand div:nth-child(10){
+    transform: translateX(-510%);
+}
+.dealerHand div:nth-child(11), .playerHand div:nth-child(11){
+    transform: translateX(-570%);
+}
+.dealerHand div:nth-child(12), .playerHand div:nth-child(12){
+    transform: translateX(-630%);
+}
+.dealerHand div:nth-child(13), .playerHand div:nth-child(13){
+    transform: translateX(-690%);
+}
+.gameWindow {
+    background: green;
+    padding: 4vw;
+}
+.betCon {
+    width: 10%;
+    margin: 0 auto;
+    border: 5px solid white;
+    border-radius: 100%;
+}
+.playersCon {
+    display: flex;
+    justify-content: space-between;
+}
+.revealCard {
+    position: relative;
+    z-index: 10;
 }
